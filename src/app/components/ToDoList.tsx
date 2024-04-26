@@ -1,23 +1,10 @@
-"use client";
-
-import { useState } from "react";
 import type { ToDo } from "@/actions/getTodos";
-import Input from "./SearchInput";
+import ToggleSearchInput from "./ToggleSearchInput";
 
 export default function ToDoList({ todos }: { todos: ToDo[] }) {
-  const [showSearchInput, setShowSearchInput] = useState(false);
-
   return (
     <div className="flex flex-col w-full">
-      <button
-        className="px-3 py-2 rounded-md border-gray-300 shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm bg-pink-500 text-white mb-4"
-        onClick={() => {
-          setShowSearchInput(!showSearchInput);
-        }}
-      >
-        {showSearchInput ? "Hide" : "Show"} Input
-      </button>
-      {showSearchInput && <Input />}
+      <ToggleSearchInput />
       <ul className="mt-4 flex-grow">
         {todos.map((todo) => (
           <li

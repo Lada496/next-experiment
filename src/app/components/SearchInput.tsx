@@ -2,7 +2,6 @@
 
 import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
-
 export default function Input() {
   const pathname = usePathname();
   const [text, setText] = useState("");
